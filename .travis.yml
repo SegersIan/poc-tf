@@ -1,5 +1,13 @@
-language: node_js
-node_js:
-  - lts/*
-script:
-  - echo "Hello world"
+dist: xenial # Ubuntu 16.04
+language: bash
+before_install:
+  - wget https://releases.hashicorp.com/terraform/0.13.2/terraform_0.13.2_linux_amd64.zip
+  - unzip terraform_0.13.2_linux_amd64.zip
+  - sudo mv terraform /usr/local/bin/
+  - rm terraform_0.13.2_linux_amd64.zip
+
+jobs:
+  include:
+    - stage: Plan
+      script:
+        - terraform plan
