@@ -10,4 +10,6 @@ jobs:
   include:
     - stage: Plan
       script:
-        - terraform plan
+        - terraform init
+        - terraform plan -out=myplan
+        - terraform show myplan
