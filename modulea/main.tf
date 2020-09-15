@@ -13,6 +13,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "perm_common" {
-  name     = "rg-test"
+  name     = "rg-test-a"
   location = "northeurope"
 }
